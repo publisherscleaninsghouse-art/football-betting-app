@@ -1,0 +1,185 @@
+.games-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.games-header {
+  margin-bottom: 2rem;
+}
+
+.games-header h1 {
+  margin-bottom: 1rem;
+  color: #1a1a2e;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.filters button {
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.filters button.active {
+  background-color: #16c784;
+  color: white;
+}
+
+.games-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.game-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.game-card.live {
+  border-top: 4px solid #e74c3c;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f5f5f5;
+}
+
+.league {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status.live {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.status.scheduled {
+  background-color: #3498db;
+  color: white;
+}
+
+.game-teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5rem;
+}
+
+.team {
+  text-align: center;
+  flex: 1;
+}
+
+.team img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.team p {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.game-score {
+  text-align: center;
+  flex: 0.5;
+}
+
+.vs {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.live-score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #16c784;
+  margin: 0.5rem 0 0 0;
+}
+
+.kick-off-time {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.game-odds {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+}
+
+.odd {
+  text-align: center;
+  flex: 1;
+}
+
+.odd p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.odds-value {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #16c784;
+}
+
+.bet-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #16c784;
+  color: white;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.bet-button:hover {
+  background-color: #0fa367;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
