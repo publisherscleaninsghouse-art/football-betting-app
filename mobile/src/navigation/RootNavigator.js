@@ -9,6 +9,8 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import DashboardScreen from './screens/DashboardScreen';
 import GamesScreen from './screens/GamesScreen';
+import LiveGameScreen from './screens/LiveGameScreen';
+import BettingHistoryScreen from './screens/BettingHistoryScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -22,6 +24,33 @@ const AuthStack = () => {
     >
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
+    </Stack.Navigator>
+  );
+};
+
+const GamesStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#1a1a2e',
+        },
+        headerTintColor: '#16c784',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}
+    >
+      <Stack.Screen
+        name="GamesList"
+        component={GamesScreen}
+        options={{ title: 'Football Games' }}
+      />
+      <Stack.Screen
+        name="LiveGame"
+        component={LiveGameScreen}
+        options={{ title: 'Live Game' }}
+      />
     </Stack.Navigator>
   );
 };
@@ -42,7 +71,7 @@ const AppStack = () => {
       }}
     >
       <Tab.Screen
-        name="Dashboard"
+        name="DashboardTab"
         component={DashboardScreen}
         options={{
           tabBarLabel: 'Dashboard',
@@ -50,11 +79,19 @@ const AppStack = () => {
         }}
       />
       <Tab.Screen
-        name="Games"
-        component={GamesScreen}
+        name="GamesTab"
+        component={GamesStack}
         options={{
           tabBarLabel: 'Games',
-          title: 'Football Games',
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="HistoryTab"
+        component={BettingHistoryScreen}
+        options={{
+          tabBarLabel: 'History',
+          title: 'Betting History',
         }}
       />
     </Tab.Navigator>
